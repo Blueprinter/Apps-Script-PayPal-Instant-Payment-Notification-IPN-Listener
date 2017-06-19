@@ -30,7 +30,7 @@ Quote:After receiving the IPN message from PayPal, your listener returns an empt
  
 # Create an IPN listener page
 
-- IPN Set up Guide
+- [IPN Set up Guide](https://developer.paypal.com/docs/classic/ipn/integration-guide/IPNSetup/)
 - In your PayPal account profile- Add the Apps Script Web App Url as the IPN listener page.
 - Go into your Profile Settings
 - Choose “My Selling Tools”
@@ -41,16 +41,16 @@ Quote:After receiving the IPN message from PayPal, your listener returns an empt
 
 # Test your IPN Listener - Which is an Apps Script Web App
 
-- You can use the IPN simulator: Docs IPN Simulator
-- There is a test property from the IPN simulator named: test_ipn  PayPal doesn’t call it a property, they call it a variable.  That variable is not included in the live IPN message.
+- You can use the IPN simulator: [Docs IPN Simulator](https://developer.paypal.com/docs/classic/ipn/integration-guide/IPNSimulator/)
+- There is a test property from the IPN simulator named: ***test_ipn***  PayPal doesn’t call it a property, they call it a variable.  That variable is not included in the live IPN message.
 - There are 2 basic things that you must do to use the IPN Simulator.  You need to add the word “sandbox” to the postback URL: https://ipnpb.sandbox.paypal.com/cgi-bin/webscr
 - Secondly, the Apps Script Web App must be published and functioning.  That was covered above.
 - Next Log into the Developer part of Pay Pal:  https://developer.paypal.com/docs/classic/ipn/integration-guide/IPNSimulator/  I can not find a way to get to the IPN simulator documentation by navigating the menus.  Unless you are logged in, the Dashboard is not displayed, and you can not get to the IPN Simulator
-- Paste your Apps Script URL into the IPN handler URL field.
+- Paste your Apps Script URL into the ***IPN handler URL*** field.
 - Choose the Transaction type - Probably “Express Checkout”
 - Make sure that the latest version of your Apps Script Web App is published, or it won’t run the newest version.
-If you don’t use the special test URL with “sandbox” you may get a message in the simulator that the handshake was verified, but get an INVALID response back from the POST request.
-- You should receive a VERIFIED response back from the handshake.
+If you don’t use the special test URL with “sandbox” you may get a message in the simulator that the handshake was verified, but get an ***INVALID*** response back from the POST request.
+- You should receive a ***VERIFIED*** response back from the handshake.
  
  
  
