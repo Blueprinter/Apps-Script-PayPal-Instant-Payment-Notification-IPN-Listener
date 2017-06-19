@@ -5,7 +5,7 @@ Receive payment information from PayPal to an Apps Script Web App
  
 IPN or Instant Payment Notification, informs you of Payments received from Pay Pal.
  
-General Pay Pal information about the IPN listener.
+# General Pay Pal information about the IPN listener.
 PayPal can send probably 2 or 300 different types of data, all with their own property name.
 The first property name that you may want to know about is: txn_type
 txn_type tells you what category of data that it is sending, for example: express_checkout which means that a single payment was received from the express checkout.  Or new_case meaning that a dispute was filed.  Transaction Types
@@ -16,11 +16,13 @@ There are two things that must happen from the Apps Script end to respond back t
 Quote:After receiving the IPN message from PayPal, your listener returns an empty HTTP 200 response to PayPal. Otherwise, PayPal resends the IPN message.  This probably happens automatically and internally.  I don’t think that you need to program anything for this to happen.
 Quote: Your listener sends the complete message back to PayPal using HTTPS POST.  Prefix the returned message with the cmd=_notify-validate variable, but do not change the message fields, the order of the fields, or the character encoding from the original message.
 There is another quote that states to add the "cmd=_notify-validate" to the end, and not the beginning:  Quote:  After receiving an IPN message from PayPal, you must respond to PayPal with a POST message that is an exact copy of the received message but with "cmd=_notify-validate" added to the end of the message.  One part of the documentation states to add the "cmd=_notify-validate" to the beginning, and another part of the documentation states to add it to the end.  I just added a cmd property to the object with the value _notify-validate" and the Simulator stated that the handshake was verified.
-Create and Publish an Apps Script Web App as the IPN listener page
+
+# Create and Publish an Apps Script Web App as the IPN listener page
 The Web App needs a doPost() function to receive the request sent from PayPal
 Add code to the Apps Script code editor - for code see:
  
-Create an IPN listener page
+# Create an IPN listener page
+
 IPN Set up Guide
 In your PayPal account profile- Add the Apps Script Web App Url as the IPN listener page.
 Go into your Profile Settings
