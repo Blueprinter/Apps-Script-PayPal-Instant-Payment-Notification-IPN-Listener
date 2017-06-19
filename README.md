@@ -26,7 +26,7 @@ Quote:After receiving the IPN message from PayPal, your listener returns an empt
 
 # Create and Publish an Apps Script Web App as the IPN listener page
 - The Web App needs a doPost() function to receive the request sent from PayPal
-- Add code to the Apps Script code editor - for code see:
+- Add code to the Apps Script code editor - for code see: Code.gs file in this repo
  
 # Create an IPN listener page
 
