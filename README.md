@@ -9,7 +9,7 @@ IPN or Instant Payment Notification, informs you of Payments received from Pay P
 
 - PayPal can send probably 2 or 300 different types of data, all with their own property name.
 - The first property name that you may want to know about is: ***txn_type***
-txn_type tells you what category of data that it is sending, for example: ***express_checkout*** which means that a single payment was received from the express checkout.  Or new_case meaning that a dispute was filed.  Transaction Types
+txn_type tells you what category of data that it is sending, for example: ***express_checkout*** which means that a single payment was received from the express checkout.  Or new_case meaning that a dispute was filed.  [Transaction Types](https://developer.paypal.com/docs/classic/ipn/integration-guide/IPNandPDTVariables/#id08CTB0S055Z)
 - The next property names you’ll probably want to know about are the “Payment Information Variables”  [Payment Information Variables](https://developer.paypal.com/docs/classic/ipn/integration-guide/IPNandPDTVariables/#id091EB04C0HS)
 - The payment information property that you’ll probably want to use is ***payment_status***  which has many sub-properties indicating the payment status.  Of the 12 or so sub-properties of ***payment_status***, you’ll probably be the most interested in:  ***Completed*** and ***Processed*** ; and also ***Denied*** and ***Failed***.  There is also:  ***Pending Refunded Reversed*** and ***Voided***.  But, if you didn’t get the payment, then you probably won’t want to give the user access to whatever you’re selling.
 
