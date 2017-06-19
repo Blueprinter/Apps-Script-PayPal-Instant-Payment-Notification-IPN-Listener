@@ -1,0 +1,69 @@
+var LOG_GLOBAL = {};
+
+function ll(a,b,c) {
+  var clearEachRun,data,i,ss,sh,thisVal;
+  //Logger.log('ll ran')
+  //Logger.log('a: ' + a)
+  //Logger.log('b: ' + b)
+  //Logger.log('c: ' + c)
+  //USER INPUT
+  clearEachRun = false;
+  
+  //END OF USER INPUT
+try{
+  
+  //if (!a) return;  This should NOT end the code-  I may want to know if a value is undefined
+  sh = LOG_GLOBAL.sh;
+  
+  if (!sh) {
+    ss=SpreadsheetApp.openById('Your spreadsheet file ID here');
+    sh=ss.getSheetByName('Sheet1');
+    
+    if (clearEachRun) {
+      //Logger.log("clearEachRun === 'true'")
+      sh.clearContents();
+    }
+  }
+
+  data = [];
+  for (i=0;i<3;i++) {
+    if (i===0) {
+      thisVal = a;
+    } else if (i===1) {
+      thisVal = b;
+    } else {
+      thisVal = c;
+    }
+    
+    if (typeof thisVal === 'object') {
+      thisVal = thisVal.toString();
+      //Logger.log('thisVal is an object')
+      //continue;
+    }
+    //Logger.log('thisVal: ' + thisVal)
+    
+    if (thisVal === undefined && i < 2) {//Avoid having all three cells undefined
+      thisVal = 'UNDEFINEDDD' + i.toString();
+    } else if (thisVal === undefined) {//It is the third iteration so do not push a 3rd value to the array
+      break;
+    } else if (thisVal === null) {
+      thisVal = 'NULLLL';
+    } else if (thisVal === false) {
+      thisVal = 'FALZZE';
+    } else if (thisVal === true) {
+      thisVal = 'TREWWW';
+    }
+    
+    data.push(thisVal);
+  }
+
+  //Logger.log('data: ' + data)
+  //Logger.log('typeof data: ' + typeof data)
+  //Logger.log('sh: ' + sh.getName())
+  
+  sh.appendRow(data);
+  SpreadsheetApp.flush();
+}catch(e){
+  Logger.log('Error in ll: ' + e.message)
+};
+};
