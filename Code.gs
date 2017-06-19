@@ -1,4 +1,3 @@
-//https://docs.google.com/document/d/1dQMcFDz6JL7f24KohakaqCa7Suse68oMIxaUL6W-GJs/edit
 /**
  * NOTES:
  * For LIVE use make sure to use the correct Post Back URL - The URL that does NOT include the word sandbox
